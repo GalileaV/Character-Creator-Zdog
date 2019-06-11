@@ -1,0 +1,10 @@
+.zdog-canvas {
+  background: #FDB;
+  cursor: move;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
