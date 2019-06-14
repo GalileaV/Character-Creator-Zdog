@@ -1,4 +1,4 @@
-const hairlessShape = (head) => ({
+export const hairlessShape = (TAU, head) => ({
   addTo: head,
   diameter: 13,
   color: 'white',
@@ -6,17 +6,16 @@ const hairlessShape = (head) => ({
   rotate: { x: TAU/8 * 3, y: 0 },
 });
 
-const faceShape = (head) => ({
+export const faceShape = (TAU, head) => ({
   addTo: head,
   diameter: 13,
   color: 'white',
-  //backface: '#4b2c20',
   stroke: 0.5,
   //translate: { y: -0.95 },
   rotate: { x: TAU/8 * 3, y: TAU/2 },
   });
 
-const eyeShape = (head) => ({
+export const eyeShape = (eggplant, TAU, head) => ({
   addTo: head,
   diameter: 1.5,
   closed: true,
@@ -28,11 +27,11 @@ const eyeShape = (head) => ({
   backface: false,
 });
 
-const eyeShapeCopy = {
-  translate: { x: 2.8, y: 1, z: 4.5 },
+export const eyeShapeCopy = {
+  translate: { x: 2.8, y: 1, z: 5.5 },
 };
 
-const earShape = (head) => ({
+export const earShape = (offWhite, head) => ({
   addTo: head,
   diameter: 2,
   stroke: 1.3,
@@ -42,12 +41,12 @@ const earShape = (head) => ({
   color: offWhite,
 });
 
-const earShapeCopy = (ear) => ({
+export const earShapeCopy = (TAU, ear) => ({
   rotate: { y: TAU/2 },
   translate: { x: -5.8, y: 0.8, z: -0.3 }
 });
 
-const mouthShape = (head) => ({
+export const mouthShape = (eggplant, TAU, head) => ({
   addTo: head,
   diameter: 2.3,
   quarters: 2,

@@ -1,37 +1,42 @@
+import { illoShape, hipsShape, legShape, footShape, legShapeCopy, footShapeCopy } from "./Shapes/lower-body.js";
+import { chestShape, neckShape, headShape, armShape, handShape, armShapeCopy } from "./Shapes/upper-body.js";
+import { hairlessShape, faceShape, eyeShape, eyeShapeCopy, earShape, earShapeCopy, mouthShape } from "./Shapes/head.js";
+import { simpleHairShape, topKnotShape, knotShape, knotShapeCopy } from "./Shapes/hair.js";
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 const TAU = Zdog.TAU;
 const offWhite = '#FED';
 const eggplant = '#636';
+const blue = '#4A82E4';
 
 //lower-body
 const illo = new Zdog.Illustration(illoShape);
 const hips = new Zdog.Shape(hipsShape(illo));
 const leg = new Zdog.Shape(legShape(hips));
-const foot = new Zdog.RoundedRect(footShape(leg));
-leg.copyGraph(legShapeCopy);
+const foot = new Zdog.RoundedRect(footShape(TAU, leg));
+leg.copy(legShapeCopy(hips));
+foot.copy(footShapeCopy(leg));
 //upper-body
 const chest = new Zdog.Shape(chestShape(hips));
 const neck = new Zdog.Shape(neckShape(chest));
 const head = new Zdog.Anchor(headShape(neck));
-const arm = new Zdog.Shape(armShape(chest));
+const arm = new Zdog.Shape(armShape(TAU, chest));
 const hand = new Zdog.Shape(handShape(arm));
-arm.copyGraph(armShapeCopy(arm));
+arm.copyGraph(armShapeCopy(TAU, arm));
 //head
-const face = new Zdog.Hemisphere(faceShape(head));
-const hairless = new Zdog.Hemisphere(hairlessShape(head));
-const eye = new Zdog.Ellipse(eyeShape(head));
-const ear = new Zdog.Ellipse(earShape(head));
-const mouth = new Zdog.Ellipse(mouthShape(head));
+const face = new Zdog.Hemisphere(faceShape(TAU, head));
+const hairless = new Zdog.Hemisphere(hairlessShape(TAU, head));
+const eye = new Zdog.Ellipse(eyeShape(eggplant, TAU, head));
+const ear = new Zdog.Ellipse(earShape(offWhite, head));
+const mouth = new Zdog.Ellipse(mouthShape(eggplant, TAU, head));
 eye.copy(eyeShapeCopy);
-ear.copy(earShapeCopy(ear));
+ear.copy(earShapeCopy(TAU, ear));
 
-
-const manageHair = () => {
+const addAndRemoveSimpleHair = () => {
   hairless.remove();
-  const simpleHair = new Zdog.Hemisphere(simpleHairShape(head)); 
-  //topKnot
+  const simpleHair = new Zdog.Hemisphere(simpleHairShape(TAU, head)); 
   const topKnot = new Zdog.Shape(topKnotShape(simpleHair)); 
 
   const removeHair = () => {
@@ -40,8 +45,22 @@ const manageHair = () => {
   };
   $(".remove-hair").addEventListener('click', removeHair);
 };
-$(".simple-hair").addEventListener('click', manageHair);
+$(".simple-hair").addEventListener('click', addAndRemoveSimpleHair);
 
+
+const addAndRemoveKnots = () => {
+  hairless.remove();
+  const simpleHair = new Zdog.Hemisphere(simpleHairShape(TAU, head)); 
+  const knot = new Zdog.Shape(knotShape(simpleHair));
+  knot.copy(knotShapeCopy(simpleHair));
+
+  const removeHair = () => {
+    simpleHair.remove();
+    head.addChild(hairless);
+  };
+  $(".remove-hair").addEventListener('click', removeHair);
+};
+$(".knots").addEventListener('click', addAndRemoveKnots);
 
 function animate() {
   //illo.rotate.y += 0.012;
