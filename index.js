@@ -34,6 +34,65 @@ const mouth = new Zdog.Ellipse(mouthShape(eggplant, TAU, head));
 eye.copy(eyeShapeCopy);
 ear.copy(earShapeCopy(TAU, ear));
 
+const addAndRemoveSword = () => {
+  var sword = new Zdog.Group({
+    addTo: illo,
+    translate: { x: -16, y: -11, z: 9 },
+    rotate: { x: -TAU/30,  y: -TAU/8, z: -TAU/10}
+  });
+
+  const mango = new Zdog.Shape({
+    addTo: sword,
+    path: [{x: -4, y: 11}, {x: 4, y: 11}],
+    stroke: 2,
+    color: '#9197A1'
+  });
+
+  new Zdog.Shape({
+    addTo: mango,
+    path: [{y: 17}, {y: 11}],
+    stroke: 2,
+    color: '#9197A1'
+  });
+
+  new Zdog.Shape({
+    addTo: mango,
+    path: [ // triangle
+      { x:   0.2, y: -18 },
+      { x:  3, y:  -14 },
+      { x: 2, y:  10 },
+      { x: 0.2, y:  10 },
+      { x: 0.2, y:  -18 },
+      //{ x: -0, y:  -90 },
+    ],
+    fill:true,
+    closed: false,
+    stroke: 1,
+    color: '#E0E4EB'
+  });
+  new Zdog.Shape({
+    addTo: mango,
+    path: [ // triangle
+      { x:   -0.4, y: -18 },
+      { x:  -3, y:  -14 },
+      { x: -2, y:  10 },
+      { x: -0.4, y:  10 },
+      { x: -0.4, y:  -18 },
+      //{ x: -0, y:  -90 },
+    ],
+    fill:true,
+    closed: false,
+    stroke: 1,
+    color: '#EDEFF3'
+  });
+
+  const removeSword = () => {
+    sword.remove();
+  }
+$(".remove-sword").addEventListener('click', removeSword);
+};
+$(".add-sword").addEventListener('click', addAndRemoveSword);
+
 const addAndRemoveSimpleHair = () => {
   hairless.remove();
   const simpleHair = new Zdog.Hemisphere(simpleHairShape(TAU, head)); 
