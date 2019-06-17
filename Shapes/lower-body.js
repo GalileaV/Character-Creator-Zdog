@@ -1,6 +1,6 @@
 export const illoShape = {
   element: '.zdog-canvas',
-  zoom: 7,
+  zoom: 10,
   dragRotate: true,
 };
 
