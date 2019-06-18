@@ -77,7 +77,7 @@ export const foot = new Zdog.RoundedRect({
   color: 'white'
 });
 
-const foot2 = new Zdog.RoundedRect({
+export const foot2 = new Zdog.RoundedRect({
   addTo: leg2,
   width: 1.5,
   height: 4.5,
