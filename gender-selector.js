@@ -12,5 +12,4 @@ export const selectFemale = (illo) => {
   maleBody.remove();
   illo.addChild(femaleBody);
   illo.addChild(defaultEyes);
-
 };
