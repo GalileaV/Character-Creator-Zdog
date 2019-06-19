@@ -10,9 +10,15 @@ const illustration = new Zdog.Illustration({
   dragRotate: true,
 });
 
-$('.default-eye').addEventListener('click', () => eyeSelect("default", illustration));
-$('.happy-eye').addEventListener('click', () => eyeSelect("happy", illustration));
-$('.line-eye').addEventListener('click', () => eyeSelect("line", illustration));
+$('.default-eyes').addEventListener('click', () => eyeSelect("default", illustration));
+$('.happy-eyes').addEventListener('click', () => eyeSelect("happy", illustration));
+$('.line-eyes').addEventListener('click', () => eyeSelect("line", illustration));
+$('.close-eyes').addEventListener('click', () => eyeSelect("close", illustration));
+$('.wink-eyes').addEventListener('click', () => eyeSelect("wink", illustration));
+$('.strong-eyes').addEventListener('click', () => eyeSelect("strong", illustration));
+$('.tired-eyes').addEventListener('click', () => eyeSelect("tired", illustration));
+$('.angry-eyes').addEventListener('click', () => eyeSelect("angry", illustration));
+$('.lashes-eyes').addEventListener('click', () => eyeSelect("lashes", illustration));
 
 $('.male-body').addEventListener('click', () => selectMale(illustration));
 $('.female-body').addEventListener('click', () => selectFemale(illustration));
