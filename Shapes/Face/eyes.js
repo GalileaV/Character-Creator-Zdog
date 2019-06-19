@@ -1,12 +1,12 @@
 const TAU = Zdog.TAU;
 const eggplant = '#636';
 
-export const defaultEyes = new Zdog.Group({
+export const defaultEye = new Zdog.Group({
   translate: { y: -18, z: 5.5 },
 });
 
   const leftEye = new Zdog.Ellipse({
-    addTo: defaultEyes,
+    addTo: defaultEye,
     diameter: 1.5,
     closed: true,
     fill: true,
@@ -18,7 +18,7 @@ export const defaultEyes = new Zdog.Group({
   });
 
   const rightEye = new Zdog.Ellipse({
-    addTo: defaultEyes,
+    addTo: defaultEye,
     diameter: 1.5,
     fill: true,
     translate: { x: 2.8 },
@@ -28,12 +28,12 @@ export const defaultEyes = new Zdog.Group({
     backface: false,
   });
 
-export const happyEyes = new Zdog.Group({
+export const happyEye = new Zdog.Group({
   translate: { y: -18, z: 5.5 },
 });
 
   const leftEyeH = new Zdog.Ellipse({
-    addTo: happyEyes,
+    addTo: happyEye,
     diameter: 1.5,
     quarters: 2,
     translate: { x: -2.8 },
@@ -44,7 +44,7 @@ export const happyEyes = new Zdog.Group({
   });
 
   const rightEyeH = new Zdog.Ellipse({
-    addTo: happyEyes,
+    addTo: happyEye,
     diameter: 1.5,
     quarters: 2,
     translate: { x: 2.8 },
@@ -54,12 +54,12 @@ export const happyEyes = new Zdog.Group({
     backface: false,
   });
 
-export const lineEyes = new Zdog.Group({
+export const lineEye = new Zdog.Group({
   translate: { y: -18, z: 5.5 },
 });
 
   const leftEyeL = new Zdog.Shape({
-    addTo: lineEyes,
+    addTo: lineEye,
     path: [{ x: -3.5 }, { x: -2 }],
     color: eggplant,
     stroke: 0.6,
@@ -67,7 +67,7 @@ export const lineEyes = new Zdog.Group({
   });
 
   const rightEyel = new Zdog.Shape({
-    addTo: lineEyes,
+    addTo: lineEye,
     path: [{ x: 3.5 }, { x: 2 }],
     color: eggplant,
     stroke: 0.6,
