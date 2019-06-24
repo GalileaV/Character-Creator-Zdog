@@ -2,78 +2,71 @@ const TAU = Zdog.TAU;
 const eggplant = '#636';
 
 export const defaultMouth = new Zdog.Ellipse({
-  translate: { y: -16.5, z: 5 },
-  rotate: { z: TAU/4 },
-  diameter: 2.3,
+  translate: { y: -165, z: 50 },
+  rotate: { z: TAU / 4 },
+  diameter: 23,
   quarters: 2,
   closed: true,
   fill: true,
   color: eggplant,
-  stroke: 0.5,
-  backface: false
+  stroke: 5,
+  backface: false,
 });
 
 export const happyMouth = new Zdog.Ellipse({
-  translate: { y: -16.5, z: 5 },
-  rotate: { z: TAU/4 },
-  diameter: 2.3,
+  translate: { y: -165, z: 50 },
+  rotate: { z: TAU / 4 },
+  diameter: 23,
   quarters: 2,
   color: eggplant,
-  stroke: 0.5,
-  backface: false
+  stroke: 5,
+  backface: false,
 });
 
 export const lineMouth = new Zdog.Shape({
-  translate: { y: -16.3, z: 5 },
-  path: [ { x: -1.2 }, { x: 1.2 } ],
+  translate: { y: -163, z: 50 },
+  path: [{ x: -12 }, { x: 12 }],
   color: eggplant,
-  stroke: 0.5,
+  stroke: 5,
   backface: false,
 });
 
 export const dothMouth = new Zdog.Ellipse({
-  translate: { y: -16.3, z: 5 },
-  diameter: 1.3,
+  translate: { y: -163, z: 50 },
+  diameter: 13,
   fill: true,
   color: eggplant,
-  stroke: 0.5,
+  stroke: 5,
   backface: false,
 });
 
 export const sadMouth = new Zdog.Ellipse({
-  translate: { y: -15.5, z: 5 },
-  rotate: { z: -TAU/4 },
-  diameter: 2.3,
+  translate: { y: -155, z: 50 },
+  rotate: { z: -TAU / 4 },
+  diameter: 23,
   quarters: 2,
   color: eggplant,
-  stroke: 0.5,
-  backface: false
+  stroke: 5,
+  backface: false,
 });
 
 export const sorpriseMouth = new Zdog.Ellipse({
-  translate: { y: -15.5, z: 5 },
-  rotate: { z: -TAU/4 },
-  diameter: 2.3,
+  translate: { y: -155, z: 50 },
+  rotate: { z: -TAU / 4 },
+  diameter: 23,
   quarters: 2,
   closed: true,
   fill: true,
   color: eggplant,
-  stroke: 0.5,
-  backface: false
+  stroke: 5,
+  backface: false,
 });
 
 export const disgustMouth = new Zdog.Shape({
-  translate: { y: -16.3, z: 5 },
-  path: [ 
-    { x: -1.3 }, 
-    { bezier: [
-      { x: -0.5, y: 1 },
-      { x: 0.5, y: -1 },
-      { x: 1.3 }, 
-    ]},
-  ],
+  translate: { y: -163, z: 50 },
+  path: [{ x: -13 }, { bezier: [{ x: -5, y: 10 }, { x: 5, y: -10 }, { x: 13 }] }],
   closed: false,
   color: eggplant,
-  stroke: 0.5,
+  stroke: 5,
   backface: false,
 });

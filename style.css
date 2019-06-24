@@ -1,11 +1,24 @@
-.zdog-canvas {
-  margin: 0;
-  background: #AED6F1;
+.zdog-svg {
+  margin: 2rem;
+  background: #fdb;
   cursor: move;
+  width: 40rem;
+  height: 40rem;
 }
 
-body{
+body {
+  background: #5f6a6a;
+  margin: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.eyes {
+  width: 80px;
+}
+
+.default-eyes {
+}
+
+.angry-eyes {
 }
