@@ -50,7 +50,7 @@ export const sadMouth = new Zdog.Ellipse({
   backface: false,
 });
 
-export const sorpriseMouth = new Zdog.Ellipse({
+export const surpriseMouth = new Zdog.Ellipse({
   translate: { y: -155, z: 50 },
   rotate: { z: -TAU / 4 },
   diameter: 23,

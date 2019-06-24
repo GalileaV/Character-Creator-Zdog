@@ -95,7 +95,7 @@ const rightKnot = leftKnot.copy({
 });
 
 export const afroHair = new Zdog.Ellipse({
-  translate: { y: -230, z: -45 }
+  translate: { y: -230, z: -45 },
   rotate: { x: (TAU / 8) * 3 },
   diameter: 70,
   fill: true,
