@@ -93,3 +93,33 @@ const leftKnot = new Zdog.Shape({
 const rightKnot = leftKnot.copy({
   translate: { x: 60, y: -40, z: -55 },
 });
+
+export const afroHair = new Zdog.Ellipse({
+  translate: { y: -230, z: -45 }
+  rotate: { x: (TAU / 8) * 3 },
+  diameter: 70,
+  fill: true,
+  color: hair,
+  stroke: 150,
+});
+
+export const mohicanHair = new Zdog.Group({
+  translate: { y: -190 },
+});
+
+const simpleHairM = new Zdog.Hemisphere({
+  addTo: mohicanHair,
+  rotate: { x: (TAU / 8) * 3 },
+  diameter: 145,
+  color: hair,
+  stroke: 5,
+});
+
+const mohican = new Zdog.Ellipse({
+  addTo: mohicanHair,
+  diameter: 165,
+  quarters: 2,
+  translate: { y: -10, z: -6 },
+  rotate: { y: TAU/4, x: (TAU / 8) * 3 },
+  stroke: 40
+});
