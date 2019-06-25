@@ -10,15 +10,39 @@ body {
   background: #5f6a6a;
   margin: 0;
   display: flex;
+  justify-content: space-around;
   align-items: center;
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  margin: 0.5em;
 }
 
 .eyes {
   width: 80px;
 }
 
-.default-eyes {
+.mouth {
+  width: 80px;
 }
 
-.angry-eyes {
+.eyebrows {
+  width: 80px;
+}
+
+.ears {
+  width: 100px;
+}
+
+.hair {
+  width: 150px;
+}
+
+.item {
+  width: 150px;
 }
