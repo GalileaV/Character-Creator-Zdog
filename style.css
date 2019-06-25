@@ -1,3 +1,33 @@
+body {
+  margin: 0;
+  background: #8F887D;
+}
+
+.header {
+  margin-top: 0;
+  background-color: #FEA860;
+  color: #FEF8ED;
+  padding: 1em 1em 0.2em 1em;
+}
+
+.title {
+  font-family: 'Lemon', cursive;
+  font-size: 4rem;
+  line-height: 0;
+}
+
+.with { 
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  line-height: 0.5;
+}
+
+.creator {  
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
 .zdog-svg {
   margin: 2rem;
   background: #fdb;
@@ -6,12 +36,8 @@
   height: 40rem;
 }
 
-body {
-  background: #5f6a6a;
-  margin: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+:focus {
+    outline: none;
 }
 
 .selector {
