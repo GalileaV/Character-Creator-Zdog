@@ -1,70 +1,90 @@
-import { illoShape, hipsShape, legShape, footShape, legShapeCopy, footShapeCopy } from "./Shapes/lower-body.js";
-import { chestShape, neckShape, headShape, armShape, handShape, armShapeCopy } from "./Shapes/upper-body.js";
-import { hairlessShape, faceShape, eyeShape, eyeShapeCopy, earShape, earShapeCopy, mouthShape } from "./Shapes/head.js";
-import { simpleHairShape, topKnotShape, knotShape, knotShapeCopy } from "./Shapes/hair.js";
+import { openSection } from './Selectors/tab-selector.js';
+import { selectMale, selectFemale } from './Selectors/gender-selector.js';
+import { earSelect } from './Selectors/ear-selector.js';
+import { eyebrowSelect } from './Selectors/eyebrow-selector.js';
+import { eyeSelect } from './Selectors/eye-selector.js';
+import { mouthSelect } from './Selectors/mouth-selector.js';
+import { hairSelect } from './Selectors/hair-selector.js';
+import {
+  lowerClothesSelect,
+  upperClothesSelect,
+  ShoesSelect,
+} from './Selectors/clothes-selector.js';
+import { itemSelect } from './Selectors/item-selector.js';
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const TAU = Zdog.TAU;
-const offWhite = '#FED';
-const eggplant = '#636';
-const blue = '#4A82E4';
+let isSpinning = false;
+const illustration = new Zdog.Illustration({
+  element: '.zdog-svg',
+  translate: { y: 20 },
+  dragRotate: true,
+  resize: true,
+});
 
-//lower-body
-const illo = new Zdog.Illustration(illoShape);
-const hips = new Zdog.Shape(hipsShape(illo));
-const leg = new Zdog.Shape(legShape(hips));
-const foot = new Zdog.RoundedRect(footShape(TAU, leg));
-leg.copy(legShapeCopy(hips));
-foot.copy(footShapeCopy(leg));
-//upper-body
-const chest = new Zdog.Shape(chestShape(hips));
-const neck = new Zdog.Shape(neckShape(chest));
-const head = new Zdog.Anchor(headShape(neck));
-const arm = new Zdog.Shape(armShape(TAU, chest));
-const hand = new Zdog.Shape(handShape(arm));
-arm.copyGraph(armShapeCopy(TAU, arm));
-//head
-const face = new Zdog.Hemisphere(faceShape(TAU, head));
-const hairless = new Zdog.Hemisphere(hairlessShape(TAU, head));
-const eye = new Zdog.Ellipse(eyeShape(eggplant, TAU, head));
-const ear = new Zdog.Ellipse(earShape(offWhite, head));
-const mouth = new Zdog.Ellipse(mouthShape(eggplant, TAU, head));
-eye.copy(eyeShapeCopy);
-ear.copy(earShapeCopy(TAU, ear));
-
-const addAndRemoveSimpleHair = () => {
-  hairless.remove();
-  const simpleHair = new Zdog.Hemisphere(simpleHairShape(TAU, head)); 
-  const topKnot = new Zdog.Shape(topKnotShape(simpleHair)); 
-
-  const removeHair = () => {
-    simpleHair.remove();
-    head.addChild(hairless);
-  };
-  $(".remove-hair").addEventListener('click', removeHair);
+const rotate = () => {
+  if (isSpinning === false) {
+    isSpinning = true;
+  } else {
+    isSpinning = false;
+  }
 };
-$(".simple-hair").addEventListener('click', addAndRemoveSimpleHair);
 
+$('.rotate').addEventListener('click', rotate);
+// $$('.tablinks').forEach(element =>
+//   element.addEventListener('click', () => openSection(event, element.dataset.sectionType)),
+// );
 
-const addAndRemoveKnots = () => {
-  hairless.remove();
-  const simpleHair = new Zdog.Hemisphere(simpleHairShape(TAU, head)); 
-  const knot = new Zdog.Shape(knotShape(simpleHair));
-  knot.copy(knotShapeCopy(simpleHair));
+$('.eyes-tab').addEventListener('click', () => openSection(event, 'eyes'));
+$('.mouth-tab').addEventListener('click', () => openSection(event, 'mouth'));
+$('.eyebrows-tab').addEventListener('click', () => openSection(event, 'eyebrows'));
+$('.ears-tab').addEventListener('click', () => openSection(event, 'ears'));
+$('.hair-tab').addEventListener('click', () => openSection(event, 'hair'));
+$('.clothes-tab').addEventListener('click', () => openSection(event, 'clothes'));
+$('.items-tab').addEventListener('click', () => openSection(event, 'items'));
 
-  const removeHair = () => {
-    simpleHair.remove();
-    head.addChild(hairless);
-  };
-  $(".remove-hair").addEventListener('click', removeHair);
+$$('.ears').forEach(element =>
+  element.addEventListener('click', () => earSelect(element.dataset.earsType, illustration)),
+);
+$$('.eyebrows').forEach(element =>
+  element.addEventListener('click', () =>
+    eyebrowSelect(element.dataset.eyebrowsType, illustration),
+  ),
+);
+$$('.eyes').forEach(element =>
+  element.addEventListener('click', () => eyeSelect(element.dataset.eyeType, illustration)),
+);
+$$('.mouth').forEach(element =>
+  element.addEventListener('click', () => mouthSelect(element.dataset.mouthType, illustration)),
+);
+$$('.hair').forEach(element =>
+  element.addEventListener('click', () => hairSelect(element.dataset.hairType, illustration)),
+);
+$$('.upper-clothes').forEach(element =>
+  element.addEventListener('click', () =>
+    upperClothesSelect(element.dataset.clotheType, illustration),
+  ),
+);
+$$('.lower-clothes').forEach(element =>
+  element.addEventListener('click', () =>
+    lowerClothesSelect(element.dataset.clotheType, illustration),
+  ),
+);
+$$('.shoes').forEach(element =>
+  element.addEventListener('click', () => ShoesSelect(element.dataset.clotheType, illustration)),
+);
+$$('.item').forEach(element =>
+  element.addEventListener('click', () => itemSelect(element.dataset.itemType, illustration)),
+);
+//gender
+$('.male-body').addEventListener('click', () => selectMale(illustration));
+$('.female-body').addEventListener('click', () => selectFemale(illustration));
+
+const animate = () => {
+  illustration.updateRenderGraph();
+  illustration.rotate.y += isSpinning ? 0.012 : 0;
+  requestAnimationFrame(animate);
 };
-$(".knots").addEventListener('click', addAndRemoveKnots);
 
-function animate() {
-  //illo.rotate.y += 0.012;
-  illo.updateRenderGraph();
-  requestAnimationFrame( animate );
-}
 animate();

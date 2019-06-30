@@ -1,21 +1,273 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Electivo</title>
-	<link rel="stylesheet" href="style.css" />
-</head>
-<body>
-	<canvas class="zdog-canvas" width="440" height="440"></canvas>
+  <head>
+    <title>Electivo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One|Knewave|Lemon|Monofett&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Character Creator</h1>
+      <a class="with" href="https://zzz.dog/" target="_blank"><p>with Zdog</p></a>
+    </header>
 
-	<button class="simple-hair">Add Top Knot</button>
-	<button class="knots">Add Knots</button>
-	<button class="remove-hair">Remove hair</button>
-	
-	<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-	<script type="module" src="./Shapes/lower-body.js"></script>
-	<script type="module" src="./Shapes/upper-body.js"></script>
-	<script type="module" src="./Shapes/head.js"></script>
-	<script type="module" src="./Shapes/hair.js"></script>
-	<script type="module" src="index.js"></script>
-</body>
+    <a name="create">
+      <div class="creator">
+        <section>
+          <svg class="zdog-svg"></svg>
+        </section>
+
+        <div class="selector">
+          <section>
+            <p class="gender">
+              <span>
+                Select
+                <a href="#create" class="female-body"> Female</a>
+                or
+                <a href="#create" class="male-body">Male</a>
+                and have fun!
+              </span>
+            </p>
+            <button class="rotate">Rotate/Stop</button>
+          </section>
+          <section class="tab">
+            <button class="eyes-tab tablinks">Eyes</button>
+            <button class="mouth-tab tablinks">Mouth</button>
+            <button class="eyebrows-tab tablinks">Eyebrows</button>
+            <button class="ears-tab ears-tab tablinks">Ears</button>
+            <button class="hair-tab tablinks">Hair</button>
+            <button class="clothes-tab tablinks">Clothes</button>
+            <button class="items-tab tablinks">Items</button>
+          </section>
+
+          <section id="ears" class="tabcontent">
+            <img
+              alt="default-ears"
+              data-ears-type="default"
+              class="ears"
+              src="./images/ears/default-ears.png"
+            />
+            <img
+              alt="earring-ears"
+              data-ears-type="earing"
+              class="ears"
+              src="./images/ears/earring-ears.png"
+            />
+            <img
+              alt="ring-ears"
+              data-ears-type="ring"
+              class="ears"
+              src="./images/ears/ring-ears.png"
+            />
+          </section>
+
+          <section id="eyebrows" class="tabcontent">
+            <img
+              alt="default-eyebrows"
+              data-eyebrows-type="default"
+              class="eyebrows"
+              src="./images/eyebrows/default-eyebrows.png"
+            />
+            <img
+              alt="sad-eyebrows"
+              data-eyebrows-type="sad"
+              class="eyebrows"
+              src="./images/eyebrows/sad-eyebrows.png"
+            />
+            <img
+              alt="confused-eyebrows"
+              data-eyebrows-type="confused"
+              class="eyebrows"
+              src="./images/eyebrows/confused-eyebrows.png"
+            />
+            <img
+              alt="angry-eyebrows"
+              data-eyebrows-type="angry"
+              class="eyebrows"
+              src="./images/eyebrows/angry-eyebrows.png"
+            />
+          </section>
+
+          <section id="eyes" class="tabcontent">
+            <img
+              alt="default-eyes"
+              data-eye-type="default"
+              class="eyes"
+              src="./images/eyes/default-eyes.png"
+            />
+            <img
+              alt="angry-eyes"
+              data-eye-type="angry"
+              class="eyes"
+              src="./images/eyes/angry-eyes.png"
+            />
+            <img
+              alt="happy-eyes"
+              data-eye-type="happy"
+              class="eyes"
+              src="./images/eyes/happy-eyes.png"
+            />
+            <img
+              alt="line-eyes"
+              data-eye-type="line"
+              class="eyes"
+              src="./images/eyes/line-eyes.png"
+            />
+            <img
+              alt="closed-eyes"
+              data-eye-type="close"
+              class="eyes"
+              src="./images/eyes/closed-eyes.png"
+            />
+            <img
+              alt="wink-eyes"
+              data-eye-type="wink"
+              class="eyes"
+              src="./images/eyes/wink-eyes.png"
+            />
+            <img
+              alt="tired-eyes"
+              data-eye-type="tired"
+              class="eyes"
+              src="./images/eyes/tired-eyes.png"
+            />
+            <img
+              alt="strong-eyes"
+              data-eye-type="strong"
+              class="eyes"
+              src="./images/eyes/strong-eyes.png"
+            />
+            <img
+              alt="lashes-eyes"
+              data-eye-type="lashes"
+              class="eyes"
+              src="./images/eyes/lashes-eyes.png"
+            />
+          </section>
+
+          <section id="mouth" class="tabcontent">
+            <img
+              alt="default-mouth"
+              data-mouth-type="default"
+              class="mouth"
+              src="./images/mouth/default-mouth.png"
+            />
+            <img
+              alt="happy-mouth"
+              data-mouth-type="happy"
+              class="mouth"
+              src="./images/mouth/happy-mouth.png"
+            />
+            <img
+              alt="line-mouth"
+              data-mouth-type="line"
+              class="mouth"
+              src="./images/mouth/line-mouth.png"
+            />
+            <img
+              alt="doth-mouth"
+              data-mouth-type="doth"
+              class="mouth"
+              src="./images/mouth/doth-mouth.png"
+            />
+            <img
+              alt="sad-mouth"
+              data-mouth-type="sad"
+              class="mouth"
+              src="./images/mouth/sad-mouth.png"
+            />
+            <img
+              alt="surprise-mouth"
+              data-mouth-type="surprise"
+              class="mouth"
+              src="./images/mouth/surprise-mouth.png"
+            />
+            <img
+              alt="disgust-mouth"
+              data-mouth-type="disgust"
+              class="mouth"
+              src="./images/mouth/disgust-mouth.png"
+            />
+          </section>
+
+          <section id="hair" class="tabcontent">
+            <img
+              alt="default-hair"
+              data-hair-type="default"
+              class="hair"
+              src="./images/hair/default-hair.png"
+            />
+            <img
+              alt="simple-hair"
+              data-hair-type="simple"
+              class="hair"
+              src="./images/hair/simple-hair.png"
+            />
+            <img
+              alt="long-hair"
+              data-hair-type="long"
+              class="hair"
+              src="./images/hair/long-hair.png"
+            />
+            <img
+              alt="top-Knot-hair"
+              data-hair-type="topKnot"
+              class="hair"
+              src="./images/hair/topKnot-hair.png"
+            />
+            <img
+              alt="knots-hair"
+              data-hair-type="knots"
+              class="hair"
+              src="./images/hair/knots-hair.png"
+            />
+            <img
+              alt="afro-hair"
+              data-hair-type="afro"
+              class="hair"
+              src="./images/hair/afro-hair.png"
+            />
+            <img
+              alt="mohican-hair"
+              data-hair-type="mohican"
+              class="hair"
+              src="./images/hair/mohican-hair.png"
+            />
+          </section>
+
+          <section id="clothes" class="tabcontent">
+            <img alt="shirt" data-clothe-type="shirt" class="upper-clothes" src="./images/clothes/shirt.png" />
+            <img alt="long-shirt"
+              data-clothe-type="longShirt"
+              class="upper-clothes"
+              src="./images/clothes/long-shirt.png"
+            />
+            <img alt="jeans" data-clothe-type="jeans" class="lower-clothes" src="./images/clothes/jeans.png" />
+            <img alt="short" data-clothe-type="short" class="lower-clothes" src="./images/clothes/short.png" />
+            <img alt="shoes" data-clothe-type="shoes" class="shoes" src="./images/clothes/shoes.png" />
+          </section>
+
+          <section id="items" class="tabcontent">
+            <img
+              alt="sword"
+              data-item-type="sword"
+              class="item"
+              src="https://i.postimg.cc/cJVXdz7g/sw-ord.png"
+            />
+            <img
+              alt="shield"
+              data-item-type="shield"
+              class="item"
+              src="https://i.postimg.cc/RVRsw-Xmy/shield.png"
+            />
+          </section>
+        </div></div
+    ></a>
+
+    <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>

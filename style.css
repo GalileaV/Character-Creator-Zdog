@@ -1,10 +1,122 @@
-.zdog-canvas {
-  background: #FDB;
-  cursor: move;
+body {
+  margin: 0;
+  background: #8f887d;
 }
 
-body{
+.header {
+  margin-top: 0;
+  background-color: #36332f;
+  color: #fef8ed;
+  padding: 1em 1em 0.2em 1em;
+}
+
+.title {
+  font-family: 'Lemon', cursive;
+  font-size: 4rem;
+  line-height: 0;
+}
+
+.with {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fef8ed;
+}
+
+.creator {
+  margin: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+}
+
+.gender{
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  color: #36332f;
+}
+
+.female-body,
+.male-body {
+  font-size: 2rem;
+  color: #f8f9f9;
+  text-decoration: none;
+}
+
+.zdog-svg {
+  margin: 2rem;
+  background: #fdb;
+  cursor: move;
+  width: 40rem;
+  height: 40rem;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  font-family: 'Fredoka One', cursive;
+  color: #36332f;
+  font-size: 1.5rem;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  margin: 0.5em;
+}
+
+.eyes {
+  width: 80px;
+}
+
+.mouth {
+  width: 80px;
+}
+
+.eyebrows {
+  width: 80px;
+}
+
+.ears {
+  width: 100px;
+}
+
+.hair,
+.upper-clothes,
+.lower-clothes,
+.shoes,
+.item {
+  width: 150px;
 }
