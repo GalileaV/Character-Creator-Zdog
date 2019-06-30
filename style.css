@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  background: #8F887D;
+  background: #8f887d;
 }
 
 .header {
   margin-top: 0;
-  background-color: #FEA860;
-  color: #FEF8ED;
+  background-color: #36332f;
+  color: #fef8ed;
   padding: 1em 1em 0.2em 1em;
 }
 
@@ -16,16 +16,30 @@ body {
   line-height: 0;
 }
 
-.with { 
+.with {
   font-family: 'Fredoka One', cursive;
   font-size: 2rem;
-  line-height: 0.5;
+  text-decoration: none;
+  color: #fef8ed;
 }
 
-.creator {  
+.creator {
   margin: 0;
   display: flex;
-  align-items: center;
+  align-items: left;
+}
+
+.gender{
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  color: #36332f;
+}
+
+.female-body,
+.male-body {
+  font-size: 2rem;
+  color: #f8f9f9;
+  text-decoration: none;
 }
 
 .zdog-svg {
@@ -36,8 +50,42 @@ body {
   height: 40rem;
 }
 
-:focus {
-    outline: none;
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  font-family: 'Fredoka One', cursive;
+  color: #36332f;
+  font-size: 1.5rem;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
 }
 
 .selector {
@@ -65,10 +113,10 @@ section {
   width: 100px;
 }
 
-.hair {
-  width: 150px;
-}
-
+.hair,
+.upper-clothes,
+.lower-clothes,
+.shoes,
 .item {
   width: 150px;
 }

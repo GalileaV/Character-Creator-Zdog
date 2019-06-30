@@ -23,13 +23,13 @@ const head = new Zdog.Hemisphere({
   color: 'white',
 });
 
-const LowerBodyGroup = new Zdog.Group({
+export const LowerBodyMale = new Zdog.Group({
   addTo: maleBody,
   translate: { y: 30, z: -5 },
 });
 
 const hips = new Zdog.Shape({
-  addTo: LowerBodyGroup,
+  addTo: LowerBodyMale,
   path: [{ x: 10 }, { x: -10 }],
   stroke: 90,
 });
@@ -64,36 +64,41 @@ const leg2 = new Zdog.Shape({
   color: 'white',
 });
 
+export const feetMale = new Zdog.Group({
+  addTo: maleBody,
+  translate: { y: 210, z: 10 }
+});
+
 const foot = new Zdog.RoundedRect({
-  addTo: leg,
+  addTo: feetMale,
   width: 15,
   height: 45,
   cornerRadius: 15,
-  translate: { y: 180, z: 10 },
-  rotate: { x: TAU / 4 },
+  translate: { x: -35 },
+  rotate: { x: TAU/4},
   fill: true,
   stroke: 50,
-  color: 'white',
+  color: 'white'
 });
 
 const foot2 = new Zdog.RoundedRect({
-  addTo: leg2,
+  addTo: feetMale,
   width: 15,
   height: 45,
   cornerRadius: 15,
-  translate: { y: 180, z: 10 },
-  rotate: { x: TAU / 4 },
+  translate: { x: 35 },
+  rotate: { x: TAU/4},
   fill: true,
   stroke: 50,
-  color: 'white',
+  color: 'white'
 });
 
-const UpperBodyGroup = new Zdog.Group({
+export const UpperBodyMale = new Zdog.Group({
   addTo: maleBody,
 });
 
 const chest = new Zdog.Rect({
-  addTo: UpperBodyGroup,
+  addTo: UpperBodyMale,
   width: 35,
   height: 55,
   translate: { y: -55 },
@@ -133,16 +138,21 @@ const armDownR = new Zdog.Shape({
   color: 'white',
 });
 
+const hands = new Zdog.Group({
+  addTo: maleBody,
+  translate: { y: 20 }
+})
+
 const handLeft = new Zdog.Shape({
-  addTo: armDownL,
-  translate: { y: 120 },
+  addTo: hands,
+  translate: { x: -125 },
   stroke: 50,
   color: 'white',
 });
 
 const handRight = new Zdog.Shape({
-  addTo: armDownR,
-  translate: { y: 120 },
+  addTo: hands,
+  translate: { x: 125 },
   stroke: 50,
   color: 'white',
 });

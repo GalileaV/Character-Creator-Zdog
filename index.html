@@ -11,23 +11,39 @@
   <body>
     <header class="header">
       <h1 class="title">Character Creator</h1>
-      <p class="with">with Zdog</p>
+      <a class="with" href="https://zzz.dog/" target="_blank"><p>with Zdog</p></a>
     </header>
 
-    <div class="creator">
-      <section>
-        <svg class="zdog-svg"></svg>
-      </section>
+    <a name="create">
+      <div class="creator">
+        <section>
+          <svg class="zdog-svg"></svg>
+        </section>
 
-      <div class="selector">
-          <section class="gender-section">
-            <button class="male-body">Male</button>
-            <button class="female-body">Female</button>
+        <div class="selector">
+          <section>
+            <p class="gender">
+              <span>
+                Select
+                <a href="#create" class="female-body"> Female</a>
+                or
+                <a href="#create" class="male-body">Male</a>
+                and have fun!
+              </span>
+            </p>
+            <button class="rotate">Rotate/Stop</button>
           </section>
-          
-        <details>
-          <summary>Ears</summary>
-          <section class="ears-section">
+          <section class="tab">
+            <button class="eyes-tab tablinks">Eyes</button>
+            <button class="mouth-tab tablinks">Mouth</button>
+            <button class="eyebrows-tab tablinks">Eyebrows</button>
+            <button class="ears-tab ears-tab tablinks">Ears</button>
+            <button class="hair-tab tablinks">Hair</button>
+            <button class="clothes-tab tablinks">Clothes</button>
+            <button class="items-tab tablinks">Items</button>
+          </section>
+
+          <section id="ears" class="tabcontent">
             <img
               alt="default-ears"
               data-ears-type="default"
@@ -47,11 +63,8 @@
               src="https://i.postimg.cc/g2G9WxcF/ring-ears.png"
             />
           </section>
-        </details>
 
-        <details>
-          <summary>Eyebrows</summary>
-          <section class="eyebrows-section">
+          <section id="eyebrows" class="tabcontent">
             <img
               alt="default-eyebrows"
               data-eyebrows-type="default"
@@ -77,11 +90,8 @@
               src="https://i.postimg.cc/MTg22tHd/angry-eyebrows.png"
             />
           </section>
-        </details>
 
-        <details>
-          <summary>Eyes</summary>
-          <section class="eyes-section">
+          <section id="eyes" class="tabcontent">
             <img
               alt="default-eyes"
               data-eye-type="default"
@@ -137,11 +147,8 @@
               src="https://i.postimg.cc/mZ9K1YtW/lashes-eyes.png"
             />
           </section>
-        </details>
 
-        <details>
-          <summary>Mouth</summary>
-          <section class="mouth-section">
+          <section id="mouth" class="tabcontent">
             <img
               alt="default-mouth"
               data-mouth-type="default"
@@ -185,11 +192,8 @@
               src="https://i.postimg.cc/x8GsxPzk/disgust-mouth.png"
             />
           </section>
-        </details>
 
-        <details>
-          <summary>Hair</summary>
-          <section class="hair-section">
+          <section id="hair" class="tabcontent">
             <img
               alt="default-hair"
               data-hair-type="default"
@@ -233,11 +237,20 @@
               src="https://i.postimg.cc/FzXWV675/mohican-hair.png"
             />
           </section>
-        </details>
 
-        <details>
-          <summary>Items</summary>
-          <section class="items-section">
+          <section id="clothes" class="tabcontent">
+            <img data-clothe-type="shirt" class="upper-clothes" src="./images/clothes/shirt.png" />
+            <img
+              data-clothe-type="longShirt"
+              class="upper-clothes"
+              src="./images/clothes/long-shirt.png"
+            />
+            <img data-clothe-type="jeans" class="lower-clothes" src="./images/clothes/jeans.png" />
+            <img data-clothe-type="short" class="lower-clothes" src="./images/clothes/short.png" />
+            <img data-clothe-type="shoes" class="shoes" src="./images/clothes/shoes.png" />
+          </section>
+
+          <section id="items" class="tabcontent">
             <img
               alt="sword"
               data-item-type="sword"
@@ -251,21 +264,10 @@
               src="https://i.postimg.cc/RVRsw-Xmy/shield.png"
             />
           </section>
-        </details>
-      </div>
-    </div>
+        </div></div
+    ></a>
 
     <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-    <script type="module" src="./Shapes/Gender/female-body.js"></script>
-    <script type="module" src="./Shapes/Gender/male-body.js"></script>
-    <script type="module" src="./Shapes/Face/eyes.js"></script>
-    <script type="module" src="./Shapes/Face/eyebrows.js"></script>
-    <script type="module" src="./Shapes/Face/mouth.js"></script>
-    <script type="module" src="./Shapes/Face/ears.js"></script>
-    <script type="module" src="./Shapes/Clothes/lower-clothes.js"></script>
-    <script type="module" src="./Shapes/Clothes/upper-clothes.js"></script>
-    <script type="module" src="./Shapes/hair.js"></script>
-    <script type="module" src="./Shapes/items.js"></script>
     <script type="module" src="index.js"></script>
   </body>
 </html>
