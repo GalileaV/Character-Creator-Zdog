@@ -31,7 +31,7 @@ const rotate = () => {
   }
 };
 
-$('.rotate').addEventListener('click', rotate);
+// $('.rotate').addEventListener('click', rotate);
 // $$('.tablinks').forEach(element =>
 //   element.addEventListener('click', () => openSection(event, element.dataset.sectionType)),
 // );

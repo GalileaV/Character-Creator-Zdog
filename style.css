@@ -23,13 +23,13 @@ body {
   color: #fef8ed;
 }
 
-.creator {
+.workspace {
   margin: 0;
   display: flex;
   align-items: left;
 }
 
-.gender{
+.gender {
   font-family: 'Fredoka One', cursive;
   font-size: 2rem;
   color: #36332f;
@@ -48,6 +48,11 @@ body {
   cursor: move;
   width: 40rem;
   height: 40rem;
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
 }
 
 .tab {
@@ -88,35 +93,26 @@ body {
   border-top: none;
 }
 
-.selector {
-  display: flex;
-  flex-direction: column;
-}
 
 section {
   margin: 0.5em;
 }
 
-.eyes {
-  width: 80px;
-}
-
-.mouth {
-  width: 80px;
-}
-
+.eyes,
+.mouth,
 .eyebrows {
   width: 80px;
+  border-radius: 5px;
+  margin: 0.3em 0.5em;
 }
 
-.ears {
-  width: 100px;
-}
-
+.ears,
 .hair,
 .upper-clothes,
 .lower-clothes,
 .shoes,
 .item {
   width: 150px;
+  border-radius: 7px;
+  margin: 0.3em;
 }

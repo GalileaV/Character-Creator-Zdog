@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Character Creator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One|Knewave|Lemon|Monofett&display=swap"
@@ -15,12 +16,7 @@
     </header>
 
     <a name="create">
-      <div class="creator">
-        <section>
-          <svg class="zdog-svg"></svg>
-        </section>
-
-        <div class="selector">
+      <div class="workspace">
           <section>
             <p class="gender">
               <span>
@@ -31,8 +27,14 @@
                 and have fun!
               </span>
             </p>
-            <button class="rotate">Rotate/Stop</button>
+            <!-- <button class="rotate">Rotate/Stop</button> -->
           </section>
+
+          <section>
+            <svg class="zdog-svg"></svg>
+          </section>
+
+        <div class="selector">
           <section class="tab">
             <button class="eyes-tab tablinks">Eyes</button>
             <button class="mouth-tab tablinks">Mouth</button>
@@ -239,15 +241,36 @@
           </section>
 
           <section id="clothes" class="tabcontent">
-            <img alt="shirt" data-clothe-type="shirt" class="upper-clothes" src="./images/clothes/shirt.png" />
-            <img alt="long-shirt"
+            <img
+              alt="shirt"
+              data-clothe-type="shirt"
+              class="upper-clothes"
+              src="./images/clothes/shirt.png"
+            />
+            <img
+              alt="long-shirt"
               data-clothe-type="longShirt"
               class="upper-clothes"
               src="./images/clothes/long-shirt.png"
             />
-            <img alt="jeans" data-clothe-type="jeans" class="lower-clothes" src="./images/clothes/jeans.png" />
-            <img alt="short" data-clothe-type="short" class="lower-clothes" src="./images/clothes/short.png" />
-            <img alt="shoes" data-clothe-type="shoes" class="shoes" src="./images/clothes/shoes.png" />
+            <img
+              alt="jeans"
+              data-clothe-type="jeans"
+              class="lower-clothes"
+              src="./images/clothes/jeans.png"
+            />
+            <img
+              alt="short"
+              data-clothe-type="short"
+              class="lower-clothes"
+              src="./images/clothes/short.png"
+            />
+            <img
+              alt="shoes"
+              data-clothe-type="shoes"
+              class="shoes"
+              src="./images/clothes/shoes.png"
+            />
           </section>
 
           <section id="items" class="tabcontent">
